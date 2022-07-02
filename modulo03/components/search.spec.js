@@ -21,6 +21,7 @@ describe("Search", () => {
     render(<Search doSearch={doSearch} />);
 
     const form = screen.getByRole('form');
+
     await fireEvent.submit(form);
 
     expect(doSearch).toHaveBeenCalledTimes(1);

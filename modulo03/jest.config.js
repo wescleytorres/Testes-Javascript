@@ -1,11 +1,7 @@
 module.exports = {
-  verbose: true,
+  // verbose: true,
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: [
-    '<rootDir>/.next/',
-    '<rootDir>/node_modules/',
-    '<rootDir>/package.json',
-  ],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/package.json'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
@@ -14,5 +10,6 @@ module.exports = {
     '<rootDir>/src/components/**/*.js',
     '<rootDir>/src/pages/**/*.js',
     '<rootDir>/src/hooks/**/*.js',
+    '<rootDir>/src/store/**/*.js',
   ],
 };

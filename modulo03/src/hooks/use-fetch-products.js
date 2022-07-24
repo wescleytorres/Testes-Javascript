@@ -7,23 +7,22 @@ export const useFetchProducts = () => {
 
   useEffect(() => {
     let mounted = true;
-
     axios
       .get('/api/products')
-      .then((res) => { 
+      .then(res => {
         if (mounted) {
-          setProducts(res.data.products)
+          setProducts(res.data.products);
         }
       })
-      .catch((error) => {
+      .catch(error => {
         /* istanbul ignore next */
         if (mounted) {
-          setError(true)
+          setError(true);
         }
       });
 
-      return () => (mounted = false);
+    return () => (mounted = false);
   }, []);
 
-  return {products, error};
-}
+  return { products, error };
+};
